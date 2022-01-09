@@ -17,7 +17,7 @@ public class RequestHeaderServlet extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         printStartLine(request);
         printHeaders(request);
-        printHeaderUtils(request);
+        printHeaderUtils(request); // 헤더 정보를 편리하게 제공
         printEtc(request);
     }
 

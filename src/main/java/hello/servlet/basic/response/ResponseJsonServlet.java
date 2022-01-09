@@ -1,4 +1,4 @@
-package hello.servlet.basic.request;
+package hello.servlet.basic.response;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import hello.servlet.basic.HelloData;
@@ -24,12 +24,14 @@ public class ResponseJsonServlet extends HttpServlet {
         response.setContentType("application/json");
         response.setCharacterEncoding("utf-8");
 
+
+        //29 ~ 31줄 코드를 json으로 변경해야된다.
         HelloData helloData =new HelloData();
         helloData.setUsername("kim");
         helloData.setAge(20);
 
         //{"username": "kim", "age":20}
-        String result = objectMapper.writeValueAsString(helloData); //objectMapper.writeValueAsString()를 사용하면 객체를 Json문자로 변경할 수 있다.
+        String result = objectMapper.writeValueAsString(helloData); //objectMapper.writeValueAsString()를 사용하면 객체로 값을 써서  문자로 변경
         response.getWriter().write(result);
     }
 }

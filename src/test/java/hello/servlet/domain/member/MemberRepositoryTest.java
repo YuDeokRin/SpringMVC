@@ -47,7 +47,7 @@ public class MemberRepositoryTest {
 
         //then
         assertThat(result.size()).isEqualTo(2);
-        assertThat(result).contains(member1, member2); // result 안에 member1, member2 가 들어있는지 확인
+        assertThat(result).contains(member1, member2); // result 안에 member1(객체), member2(객체)  객체가 들어있는지 확인
 
     }
 }

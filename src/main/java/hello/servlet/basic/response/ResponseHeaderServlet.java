@@ -15,18 +15,19 @@ public class ResponseHeaderServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //[status-line]
-        response.setStatus(HttpServletResponse.SC_OK); //setStauts() 상태코드 지정할수 있다.
+        response.setStatus(HttpServletResponse.SC_OK); //setStauts() 상태코드 지정할수 있다.  , HttpServletResponse.SC_OK = 200
+//        response.setStatus(HttpServletResponse.SC_BAD_REQUEST);  // SC_BAD_REQUEST = 400    즉, 오류가 뜬다
 
         //[response-headers]
         response.setHeader("Content-type", "text/plain;charset=utf-8");
-        response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-        response.setHeader("Pragma", "no-cache");
+        response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");  // 캐시를 완전히 무효화 하겠다는 뜻
+        response.setHeader("Pragma", "no-cache"); //과거 버젼 캐시까지 무효화
         response.setHeader("my-header", "hello");
 
         //[Header 편의 메서드]
-//        content(response);
-//        cookie(response);
-//        redirect(response);
+        content(response);
+        cookie(response);
+        redirect(response);
 
         //[message body]
         PrintWriter writer = response.getWriter();

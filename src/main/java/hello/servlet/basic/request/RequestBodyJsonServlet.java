@@ -22,11 +22,11 @@ public class RequestBodyJsonServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ServletInputStream inputStream = request.getInputStream();
+        ServletInputStream inputStream = request.getInputStream(); //데이터 읽기
         String messageBody = StreamUtils.copyToString(inputStream, StandardCharsets.UTF_8);
 
         System.out.println("messageBody = " + messageBody);
-        HelloData helloData = objectMapper.readValue(messageBody, HelloData.class);
+        HelloData helloData = objectMapper.readValue(messageBody, HelloData.class); // 값을 읽어 온다.
 
         System.out.println("helloData.username = " + helloData.getUsername());
         System.out.println("helloData.age = " + helloData.getAge());

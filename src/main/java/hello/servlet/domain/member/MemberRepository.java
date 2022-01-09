@@ -12,17 +12,17 @@ public class MemberRepository {
 
     //key =  id, value = Member
     private static Map<Long, Member> store = new HashMap<>();
-    private static long sequence = 0L;
+    private static long sequence = 0L; // ID 수
 
     //싱글톤으로 생성
     private static final MemberRepository instance = new MemberRepository();
 
-
+    //조회는 getInstance로만 가능
     public static MemberRepository getInstance(){
         return instance;
     }
 
-    //아무나 생성하지 못하게 막는 용도
+    //private 아무나 생성하지 못하게 막는 용도
     private MemberRepository() {
     }
 
