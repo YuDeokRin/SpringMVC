@@ -38,6 +38,7 @@ public class FrontControllerServletV4 extends HttpServlet {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
+
         // paraMap을 넘겨 줘야한다.
         Map<String, String> paramMap = createParamMap(request);
         Map<String, Object> model = new HashMap<>(); // 추가
